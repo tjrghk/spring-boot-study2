@@ -1,5 +1,8 @@
 package hello.core;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 import hello.core.member.Grade;
 import hello.core.member.Member;
 import hello.core.member.MemberService;
@@ -14,8 +17,9 @@ public class MemberApp {
 
         // System.out.println(Grade.of("11111").toString());
 
-        AppConfig appConfig = new AppConfig();
-        MemberService memberService = appConfig.memberService();
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+        MemberService memberService = applicationContext.getBean(MemberService.class);
+        
         Member member = new Member(1L, "memberA", Grade.VIP);
         memberService.join(member);
 
