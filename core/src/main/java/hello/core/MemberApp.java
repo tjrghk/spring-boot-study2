@@ -16,10 +16,10 @@ public class MemberApp {
         // }
 
         // System.out.println(Grade.of("11111").toString());
-
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
-        MemberService memberService = applicationContext.getBean(MemberService.class);
         
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+        MemberService memberService = applicationContext.getBean("memberService", MemberService.class);
+
         Member member = new Member(1L, "memberA", Grade.VIP);
         memberService.join(member);
 

@@ -8,24 +8,24 @@ import hello.core.AppConfig;
 
 public class MemberServiceTest {
  
-    MemberService memberService;
+    // MemberService memberService;
 
-    @BeforeEach
-    void beforeEach() {
-        AppConfig appConfig = new AppConfig();
-        memberService = appConfig.memberService();
-    }
+    // @BeforeEach
+    // void beforeEach() {
+    //     AppConfig appConfig = new AppConfig();
+    //     memberService = appConfig.memberService();
+    // }
     
-    @Test
-    void join() {
-        //given
-        Member member = new Member(1L, "memberA", Grade.VIP);
+    // @Test
+    // void join() {
+    //     //given
+    //     Member member = new Member(1L, "memberA", Grade.VIP);
 
-        //when
-        memberService.join(member);
-        Member findMember = memberService.findMember(1L);
+    //     //when
+    //     memberService.join(member);
+    //     Member findMember = memberService.findMember(1L);
 
-        //then
-        Assertions.assertThat(member).isEqualTo(findMember);
-    }
+    //     //then
+    //     Assertions.assertThat(member).isEqualTo(findMember);
+    // }
 }

@@ -16,22 +16,22 @@ import hello.core.order.OrderServiceImpl;
 public class AppConfig {
 
     @Bean
-    public MemberService memberService() {
+    MemberService memberService() {
         return new MemberServiceImpl(memberRepository());
     }
 
     @Bean
-    public OrderService orderService() {
+    OrderService orderService() {
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
     @Bean
-    public MemberRepository memberRepository() {
+    MemberRepository memberRepository() {
         return new MemoryMemberRepository();
     }
 
     @Bean
-    public DiscountPolicy discountPolicy() {
+    DiscountPolicy discountPolicy() {
         return new RateDiscountPolicy();
     }
     
